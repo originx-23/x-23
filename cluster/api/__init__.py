@@ -25,4 +25,5 @@ def handle_error(err):
 from . import journal
 from . import scheduler
 from . import skill
+from . import task
 
