@@ -1,0 +1,4 @@
+es:
+  hosts: 'http://es01:9200'
+  username: 'elastic'
+  password: 'xover23'

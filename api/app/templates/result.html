@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Response</title>
+</head>
+<body>
+    <h1>AI Agent Response</h1>
+    <p>{{ response.text }}</p>
+
+    {% if response.schedule %}
+        <h2>添加的日程</h2>
+        <p>{{ response.schedule }}</p>
+    {% elif response.diary %}
+        <h2>添加的日记</h2>
+        <p>{{ response.diary }}</p>
+    {% endif %}
+
+    <a href="/">返回首页</a>
+</body>
+</html>

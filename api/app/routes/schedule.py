@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from app.services.schedule_service import schedule_service
+from api.app.services.schedule_service import schedule_service
 
 schedule_bp = Blueprint('schedule', __name__, url_prefix='/schedule')
 

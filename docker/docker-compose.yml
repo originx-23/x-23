@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+    container_name: es01
+    environment:
+      - discovery.type=single-node
+      - cluster.name=dangkang-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+
+  x-23:
+    build: .
+    container_name: dangkang
+    command: uvicorn api.main:app --host 0.0.0.0 --port 12138
+    volumes:
+      - .:/app
+    ports:
+      - "12138:12138"
+    depends_on:
+      - es01
+
+volumes:
+  esdata1:
+    driver: local

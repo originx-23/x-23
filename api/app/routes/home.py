@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request
-from app.services.llama_service import llama_service
-from app.services.health_service import health_service
-from app.services.finance_service import finance_service
-from app.services.schedule_service import schedule_service
+from api.app.services.llama_service import llama_service
+from api.app.services.health_service import health_service
+from api.app.services.finance_service import finance_service
+from api.app.services.schedule_service import schedule_service
 
 home_bp = Blueprint('home', __name__)
 

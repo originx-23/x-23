@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from app.services.health_service import health_service
+from api.app.services.health_service import health_service
 
 health_bp = Blueprint('health', __name__, url_prefix='/health')
 
