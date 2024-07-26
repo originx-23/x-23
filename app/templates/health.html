@@ -7,6 +7,11 @@
 </head>
 <body>
     <h1>健康数据</h1>
-    <pre>{{ health_data }}</pre>
+    <ul>
+        <li>步数: {{ health_data.steps }}</li>
+        <li>心率: {{ health_data.heart_rate }}</li>
+        <li>睡眠小时数: {{ health_data.sleep_hours }}</li>
+        <li>燃烧的卡路里: {{ health_data.calories_burned }}</li>
+    </ul>
 </body>
 </html>

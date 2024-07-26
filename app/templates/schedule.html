@@ -12,5 +12,10 @@
             <li>{{ item }}</li>
         {% endfor %}
     </ul>
+    <form action="/schedule" method="post">
+        <input type="text" name="user_id" placeholder="输入用户ID">
+        <input type="text" name="schedule_item" placeholder="输入日程">
+        <button type="submit">添加日程</button>
+    </form>
 </body>
 </html>

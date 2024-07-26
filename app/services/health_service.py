@@ -1,12 +1,15 @@
-import requests
-
 class HealthService:
-    def __init__(self, api_key):
-        self.api_key = api_key
+    def __init__(self):
+        pass
 
     def get_health_data(self, user_id):
-        response = requests.get(f'https://api.health.com/users/{user_id}/data', headers={'Authorization': f'Bearer {self.api_key}'})
-        return response.json()
+        # 模拟数据
+        health_data = {
+            "steps": 10000,
+            "heart_rate": 70,
+            "sleep_hours": 8,
+            "calories_burned": 500
+        }
+        return health_data
 
-health_service = HealthService('your_api_key_here')
-
+health_service = HealthService()

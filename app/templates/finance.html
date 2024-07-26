@@ -7,6 +7,11 @@
 </head>
 <body>
     <h1>财务数据</h1>
-    <pre>{{ finance_data }}</pre>
+    <ul>
+        <li>账户余额: {{ finance_data.balance }}</li>
+        <li>收入: {{ finance_data.income }}</li>
+        <li>支出: {{ finance_data.expenses }}</li>
+        <li>储蓄目标: {{ finance_data.savings_goal }}</li>
+    </ul>
 </body>
 </html>

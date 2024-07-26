@@ -11,4 +11,3 @@ class LlamaService:
 
 
 llama_service = LlamaService('http://localhost:5000/inference')
-
