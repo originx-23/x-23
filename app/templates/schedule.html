@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生成结果</title>
+    <title>日程管理</title>
 </head>
 <body>
-    <h1>生成的日程表</h1>
-    <pre>{{ response }}</pre>
+    <h1>日程管理</h1>
+    <ul>
+        {% for item in schedules %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

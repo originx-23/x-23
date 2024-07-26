@@ -7,11 +7,22 @@
 </head>
 <body>
     <h1>欢迎使用X-23</h1>
+    <form action="/plan" method="post">
+        <input type="text" name="user_input" placeholder="输入你的计划">
+        <button type="submit">生成日程表</button>
+    </form>
+    <form action="/health" method="get">
+        <input type="text" name="user_id" placeholder="输入用户ID">
+        <button type="submit">查看健康数据</button>
+    </form>
+    <form action="/finance" method="get">
+        <input type="text" name="user_id" placeholder="输入用户ID">
+        <button type="submit">查看财务数据</button>
+    </form>
+    <form action="/schedule" method="post">
+        <input type="text" name="user_id" placeholder="输入用户ID">
+        <input type="text" name="schedule_item" placeholder="输入日程">
+        <button type="submit">添加日程</button>
+    </form>
 </body>
-<form action="/plan" method="post">
-    <input type="text" name="user_input" placeholder="输入你的计划">
-    <button type="submit">生成日程表</button>
-</form>
 </html>
-
-
