@@ -1,0 +1,100 @@
+SWITCH(
+  [关系],
+  "95 生死不离", 95,
+  "90 莫逆之交", 90,
+  "85 肝胆相照", 85,
+  "80 策马同游", 80,
+  "70 好友", 70,
+  "65 普通朋友", 65,
+  "60 挺喜欢的", 60,
+  "55 有点喜欢", 55,
+  50
+) +
+  1 *
+    (1 -
+      (DAYS(
+        TODAY(),
+        [交互管理].[输出时间]
+          .FILTER(
+            CONTAIN([交互管理].[target], [姓名])
+          )
+          .FILTER(
+            CONTAIN([交互管理].[manipulate], "visit")
+          )
+          .LAST()
+      ) /
+        100)) +
+  0.5 *
+    (1 -
+      (DAYS(
+        TODAY(),
+        [交互管理].[输出时间]
+          .FILTER(
+            CONTAIN([交互管理].[target], [姓名])
+          )
+          .FILTER(
+            CONTAIN([交互管理].[manipulate], "gift")
+          )
+          .LAST()
+      ) /
+        100)) +
+  0.2 *
+    (1 -
+      (DAYS(
+        TODAY(),
+        [交互管理].[输出时间]
+          .FILTER(
+            CONTAIN([交互管理].[target], [姓名])
+          )
+          .FILTER(
+            CONTAIN([交互管理].[manipulate], "message")
+          )
+          .LAST()
+      ) /
+        100)) +
+  0.1 *
+    COUNTA(
+      [交互管理].[输出时间]
+        .FILTER(
+          CONTAIN([交互管理].[target], [姓名])
+        )
+        .FILTER(
+          CONTAIN([交互管理].[manipulate], "visit")
+        )
+    ) +
+  0.05 *
+    COUNTA(
+      [交互管理].[输出时间]
+        .FILTER(
+          CONTAIN([交互管理].[target], [姓名])
+        )
+        .FILTER(
+          CONTAIN([交互管理].[manipulate], "gift")
+        )
+    ) +
+  0.02 *
+    COUNTA(
+      [交互管理].[输出时间]
+        .FILTER(
+          CONTAIN([交互管理].[target], [姓名])
+        )
+        .FILTER(
+          CONTAIN([交互管理].[manipulate], "message")
+        )
+    ) -
+  5 *
+    ((DAYS(
+      TODAY(),
+      [交互管理].[输出时间]
+        .FILTER(
+          CONTAIN([交互管理].[target], [姓名])
+        )
+        .LAST()
+    )) /
+      100)
+
+
+
+
+
+
