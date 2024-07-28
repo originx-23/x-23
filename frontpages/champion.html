@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Image</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <img id="dynamic-image" src="" alt="Dynamic Image">
+  <script>
+    // 从后端传递的图像数据
+    var imgData = "{{ img_data }}";
+
+    // 设置图像元素的src属性为Base64编码的图像数据
+    var imgElement = document.getElementById('dynamic-image');
+    imgElement.src = 'data:image/png;base64,' + imgData;
+  </script>
+</body>
+</html>

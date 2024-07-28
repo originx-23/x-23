@@ -1,0 +1,2 @@
+class Health(object):
+    pass
